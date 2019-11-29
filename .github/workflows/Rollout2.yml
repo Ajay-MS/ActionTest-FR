@@ -1,0 +1,80 @@
+name: Rollout Row based
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: echo Feature flag rollout demo!
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'TURN_ON'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D' \n- target: 'row'\n  op: '='\n  value: 'E'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D' \n- target: 'row'\n  op: '='\n  value: 'E' \n- target: 'row'\n  op: '='\n  value: 'F'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D' \n- target: 'row'\n  op: '='\n  value: 'E' \n- target: 'row'\n  op: '='\n  value: 'F' \n- target: 'row'\n  op: '='\n  value: 'G'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D' \n- target: 'row'\n  op: '='\n  value: 'E' \n- target: 'row'\n  op: '='\n  value: 'F' \n- target: 'row'\n  op: '='\n  value: 'G' \n- target: 'row'\n  op: '='\n  value: 'H'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D' \n- target: 'row'\n  op: '='\n  value: 'E' \n- target: 'row'\n  op: '='\n  value: 'F' \n- target: 'row'\n  op: '='\n  value: 'G' \n- target: 'row'\n  op: '='\n  value: 'H' \n- target: 'row'\n  op: '='\n  value: 'I'"
+    - uses: Ajay-MS/hello-world-action@master
+      with:
+        action-type: 'SET_CONDITION'
+        project-id: '008af12b-94a6-4015-8633-4f50cc02b9c0'
+        feature-flag-name: 'Microsoft.FeatureFlagDemo.GreenBackground'
+        feature-flag-condition: "- target: 'row'\n  op: '='\n  value: 'A' \n- target: 'row'\n  op: '='\n  value: 'B' \n- target: 'row'\n  op: '='\n  value: 'C' \n- target: 'row'\n  op: '='\n  value: 'D' \n- target: 'row'\n  op: '='\n  value: 'E' \n- target: 'row'\n  op: '='\n  value: 'F' \n- target: 'row'\n  op: '='\n  value: 'G' \n- target: 'row'\n  op: '='\n  value: 'H' \n- target: 'row'\n  op: '='\n  value: 'I'  \n- target: 'row'\n  op: '='\n  value: 'J'"
+    
+
